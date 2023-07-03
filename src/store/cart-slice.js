@@ -6,6 +6,8 @@ const cartSlice = createSlice({
     items: [],
     totalQuantity: 0,
     changed: false,
+
+    todos: [],
   },
   reducers: {
     replaceCart(state, action) {
@@ -42,9 +44,11 @@ const cartSlice = createSlice({
         existingItem.totalPrice = existingItem.totalPrice - existingItem.price;
       }
     },
+    fetchTodos(state, action){ // fetch todos as test
+      state.todos = action.payload;
+    }
   },
 });
 
 export const cartActions = cartSlice.actions;
-
 export default cartSlice;

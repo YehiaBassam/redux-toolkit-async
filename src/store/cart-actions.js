@@ -85,3 +85,20 @@ export const sendCartData = (cart) => {
     }
   };
 };
+
+export const fetchTodos = () => { // fetch todos as test
+  return async (dispatch) => {
+    const fetchTodoData = async () => {
+      const response = await fetch('https://jsonplaceholder.typicode.com/todos');
+      const todos = await response.json();
+      return todos.slice(0 , 3);
+    }
+
+    try {
+      const todos = await fetchTodoData();
+      dispatch( cartActions.fetchTodos(todos) )
+    } catch (error) {
+      console.log('err', error)
+    }
+  }
+}

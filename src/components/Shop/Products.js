@@ -17,9 +17,23 @@ const DUMMY_PRODUCTS = [
 ];
 
 const Products = (props) => {
+  // const todos = useSelector((state) => state.cart.todos);  // fetch todos as test
+
   return (
     <section className={classes.products}>
       <h2>Buy your favorite products</h2>
+
+      {/* <div>    // fetch todos as test
+        {todos.map(todo => (
+          <div key={todo.id}>
+            <small>id : {todo.id}</small>
+            <small>title : {todo.title}</small>
+            <small>userId : {todo.userId}</small>
+          </div>
+        )
+        )}
+      </div> */}
+
       <ul>
         {DUMMY_PRODUCTS.map((product) => (
           <ProductItem
